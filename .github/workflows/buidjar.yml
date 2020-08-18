@@ -4,15 +4,6 @@ name: Build manuel du jar
 # or API.
 on:
   workflow_dispatch:
-    # Inputs the workflow accepts.
-    inputs:
-      name:
-        # Friendly description to be shown in the UI instead of 'name'
-        description: 'nom du jar'
-        # Default value if no value is explicitly provided
-        default: 'popopopo'
-        # Input has to be provided for the workflow to run
-        required: true
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -33,5 +24,5 @@ jobs:
     - name: 'Publish JAR'
       uses: actions/upload-artifact@v2-preview
       with:
-        name: ‘MaskCache-${{env.VERSION}}-SNAPSHOT.jar'
+        name: ‘MaskCache-${{env.VERSION}}.jar'
         path: build/libs/*-SNAPSHOT.jar
