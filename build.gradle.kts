@@ -11,8 +11,8 @@ publishing {
     repositories {
         maven(url = "https://mymavenrepo.com/repo/ah37AFHxnt3Fln1mwTvi/")
         credentials {
-                username myMavenRepoUser
-                password myMavenRepoPassword
+                username = myMavenRepoUser
+                password = myMavenRepoPassword
             }
     }
     publications {
@@ -25,8 +25,8 @@ publishing {
 repositories {
     maven(url = "https://mymavenrepo.com/repo/OYRB63ZK3HSrWJfc2RIB/")
     credentials {
-                username myMavenRepoUser
-                password myMavenRepoPassword
+                username = myMavenRepoUser
+                password = myMavenRepoPassword
             }
     mavenLocal()
     mavenCentral()
