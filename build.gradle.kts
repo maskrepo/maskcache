@@ -8,6 +8,14 @@ group = "fr.convergence.proddoc.libs"
 version = "1.0.2-SNAPSHOT"
 
 publishing {
+    publishing {
+    repositories {
+        maven(url = "https://mymavenrepo.com/repo/ah37AFHxnt3Fln1mwTvi/")
+        credentials {
+                username myMavenRepoUser
+                password myMavenRepoPassword
+            }
+    }
     publications {
         create<MavenPublication>("MaskCache") {
             from(components["java"])
@@ -16,6 +24,11 @@ publishing {
 }
 
 repositories {
+    maven(url = "https://mymavenrepo.com/repo/OYRB63ZK3HSrWJfc2RIB/")
+    credentials {
+                username myMavenRepoUser
+                password myMavenRepoPassword
+            }
     mavenLocal()
     mavenCentral()
 }
