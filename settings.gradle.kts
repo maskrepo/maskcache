@@ -1,3 +1,3 @@
 rootProject.name = "MaskCache"
 val myMavenRepoUser = "myMavenRepo"
-val myMavenRepoPassword  "mask"
+val myMavenRepoPassword = "mask"
