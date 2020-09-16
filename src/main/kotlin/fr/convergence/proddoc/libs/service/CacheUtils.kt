@@ -1,9 +1,8 @@
 package fr.convergence.proddoc.libs.service
 
-import fr.convergence.proddoc.libs.model.Parametre
+import fr.convergence.proddoc.model.table.Parametre
 import io.vertx.core.logging.Logger
 import io.vertx.core.logging.LoggerFactory.getLogger
-import org.codehaus.plexus.component.annotations.Configuration
 import org.eclipse.microprofile.reactive.messaging.Incoming
 import org.eclipse.microprofile.reactive.messaging.Outgoing
 import javax.enterprise.context.ApplicationScoped

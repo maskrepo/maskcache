@@ -1,6 +1,6 @@
 package fr.convergence.proddoc.libs.service
 
-import fr.convergence.proddoc.libs.model.Parametre
+import fr.convergence.proddoc.model.table.Parametre
 import java.util.concurrent.ConcurrentHashMap
 import javax.enterprise.context.ApplicationScoped
 

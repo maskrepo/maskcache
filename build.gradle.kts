@@ -1,4 +1,5 @@
 val quarkusVersion: String = "1.5.0.Final"
+val MaskModelVersion = "1.1.1-SNAPSHOT"
 
 plugins {
     kotlin("jvm") version "1.3.61"
@@ -7,7 +8,7 @@ plugins {
 }
 
 group = "fr.convergence.proddoc.libs"
-version = "1.0.4-SNAPSHOT"
+version = "1.0.5-SNAPSHOT"
 
 // je mets ces 2 variables ici car je n'arrive pas à les mettre ailleurs
 // (dans settings.gradle.kts par exemple)
@@ -48,7 +49,7 @@ dependencies {
     implementation(kotlin("stdlib-jdk8"))
     // https://mvnrepository.com/artifact/javax.enterprise/cdi-api
     implementation("javax.enterprise", "cdi-api","2.0.SP1")
-    implementation("fr.convergence.proddoc.libs:MaskModel:1.0.0-SNAPSHOT")
+    implementation("fr.convergence.proddoc.libs:MaskModel:$MaskModelVersion")
     implementation("io.quarkus:quarkus-smallrye-reactive-messaging:$quarkusVersion")
     implementation("io.quarkus:quarkus-kafka-client:$quarkusVersion")
 
