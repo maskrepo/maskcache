@@ -10,7 +10,7 @@ import javax.inject.Inject
 
 
 @ApplicationScoped
-class CacheUtils(@Inject var cache: ParametreCache) {
+class GestionnaireEvenementCacheDesParametres(@Inject var serviceDeMiseEnCacheDesParametres: ServiceDeMiseEnCacheDesParametres) {
 
     companion object {
         private val LOG: Logger = getLogger(Parametre::class.java)
@@ -18,15 +18,15 @@ class CacheUtils(@Inject var cache: ParametreCache) {
 
     @Incoming("parametre")
     @Outgoing("cache_status")
-    fun ecoute(parametre: Parametre): String {
+    fun receptionEvenementMiseAJourDunParametreDepuisMyGreffe(parametre: Parametre): String {
         try {
             LOG.debug("Réception du paramètre : $parametre");
-            cache.addParameter(parametre)
+            serviceDeMiseEnCacheDesParametres.ajoutOuMiseAJourParametre(parametre)
             LOG.debug("MAJ cache OK");
             return ("CACHE_MAJ_OK : $parametre")
         } catch (ex: Exception) {
             LOG.error("Problème de mise à jour du cache de paramètres", ex)
-            return ("CACHE_MAJ_KO : $parametre")
+            return ("CACHE_MAJ_KO : $parametre => ${ex.message}")
         }
     }
 }
