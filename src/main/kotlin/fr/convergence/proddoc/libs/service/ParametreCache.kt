@@ -1,6 +1,6 @@
 package fr.convergence.proddoc.libs.service
 
-import fr.convergence.proddoc.libs.model.Parametre
+import fr.convergence.proddoc.model.table.Parametre
 import java.util.concurrent.ConcurrentHashMap
 import javax.enterprise.context.ApplicationScoped
 
@@ -15,5 +15,5 @@ class ParametreCache {
     fun getParameter(domaine: String, sousDomaine: String, cle: String, chrono: String): Parametre = map.get(computeKey(domaine, sousDomaine, cle, chrono))!!
     private fun computeKey(domaine: String, sousDomaine: String, cle: String, chrono: String): String = "${domaine}_${sousDomaine}_${cle}_${chrono}"
 
-    fun getAll() : MutableCollection<Parametre> = map.values
+    fun getAll(): MutableCollection<Parametre> = map.values
 }

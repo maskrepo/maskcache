@@ -6,11 +6,10 @@ plugins {
     `maven-publish`
 }
 
-group = "fr.convergence.proddoc.libs"
-version = "1.0.4-SNAPSHOT"
+group = "fr.convergence.proddoc.lib"
+version = "1.0.0-SNAPSHOT"
 
-// je mets ces 2 variables ici car je n'arrive pas à les mettre ailleurs
-// (dans settings.gradle.kts par exemple)
+
 val myMavenRepoUser = "myMavenRepo"
 val myMavenRepoPassword ="mask"
 
@@ -45,20 +44,17 @@ repositories {
 }
 
 dependencies {
-    implementation(kotlin("stdlib-jdk8"))
-    // https://mvnrepository.com/artifact/javax.enterprise/cdi-api
     implementation("javax.enterprise", "cdi-api","2.0.SP1")
-    implementation("fr.convergence.proddoc.libs:MaskModel:1.0.0-SNAPSHOT")
     implementation("io.quarkus:quarkus-smallrye-reactive-messaging:$quarkusVersion")
     implementation("io.quarkus:quarkus-kafka-client:$quarkusVersion")
 
+    implementation("fr.convergence.proddoc.lib:mask-model:1.0.0-SNAPSHOT")
 }
 
 configure<JavaPluginConvention> {
-    sourceCompatibility = JavaVersion.VERSION_1_8
+    sourceCompatibility = JavaVersion.VERSION_11
 }
 
 allOpen {
     annotation("javax.enterprise.context.ApplicationScoped")
-    annotation("javax.ws.rs.Path")
 }

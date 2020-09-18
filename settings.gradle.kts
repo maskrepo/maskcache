@@ -1,1 +1,1 @@
-rootProject.name = "MaskCache"
+rootProject.name = "mask-cache"
