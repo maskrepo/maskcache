@@ -5,6 +5,8 @@ plugins {
     kotlin("jvm") version "1.4.10"
     id ("org.jetbrains.kotlin.plugin.allopen") version "1.4.10"
     `maven-publish`
+    id ("org.sonarqube") version "2.7"
+    id ("jacoco")
 }
 
 group = "fr.convergence.proddoc.lib"
