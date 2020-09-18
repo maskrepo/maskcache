@@ -32,7 +32,13 @@ publishing {
 
 repositories {
     mavenLocal()
-    maven(url = uri("https://mymavenrepo.com/repo/OYRB63ZK3HSrWJfc2RIB/"))
+    maven {
+        url = uri("https://mymavenrepo.com/repo/OYRB63ZK3HSrWJfc2RIB/")
+        credentials {
+            username = "myMavenRepo"
+            password = "mask"
+        }
+    }
     mavenCentral()
 }
 
